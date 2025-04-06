@@ -14,12 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 
 // Middleware
-const allowedOrigins = ['https://credit-seaby-me.vercel.app/']; // add your live frontend URL
-
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true, // if using cookies or auth headers
-}));
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 // Database connection
