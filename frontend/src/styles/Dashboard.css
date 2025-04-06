@@ -1,0 +1,92 @@
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    background-color: #f5f7fa;
+    padding: 0;
+    overflow-y: auto;
+  }
+  
+  /* Graphs Section */
+  .graphs-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .graph-card {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+  }
+  
+  .graph-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  /* Green Graph */
+  .green-graph {
+    height: 150px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .green-graph-container {
+    position: relative;
+    height: 100%;
+  }
+  
+  .green-graph-area {
+    fill: #4caf50;
+    opacity: 0.7;
+  }
+  
+  .green-graph-line {
+    fill: none;
+    stroke: #2e7d32;
+    stroke-width: 2;
+  }
+  
+  /* Blue Graph */
+  .blue-graph {
+    height: 150px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .blue-graph-bars rect {
+    fill: #2196f3;
+  }
+  
+  /* Red Graph */
+  .red-graph {
+    height: 150px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .red-graph-bars rect {
+    fill: #e53935;
+  }
+  
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+  }

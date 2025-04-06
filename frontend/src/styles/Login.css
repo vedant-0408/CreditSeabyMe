@@ -1,0 +1,185 @@
+/* Login.css */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 480px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .login-header {
+    background-color: #106a32;
+    color: white;
+    padding: 24px;
+    text-align: center;
+  }
+  
+  .login-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .login-header p {
+    margin: 8px 0 0;
+    opacity: 0.9;
+  }
+  
+  .login-card {
+    padding: 24px;
+  }
+  
+  .form-toggle {
+    display: flex;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .form-toggle button {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .form-toggle button.active {
+    color: #3B82F6;
+    border-bottom: 2px solid #3B82F6;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #106a32;
+    outline: none;
+  }
+  
+  .error-message {
+    background-color: #FFE2E5;
+    color: #F43F5E;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .success-message {
+    background-color: #DCFCE7;
+    color: #22C55E;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .login-btn, .register-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-btn:hover, .register-btn:hover {
+    background-color:#106a32;
+  }
+  
+  .login-btn:disabled, .register-btn:disabled {
+    background-color: #93C5FD;
+    cursor: not-allowed;
+  }
+  
+  .role-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .admin-btn, .verifier-btn {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #106a32;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .admin-btn {
+    background-color: white;
+    color: #106a32;
+  }
+  
+  .admin-btn:hover {
+    background-color: #EFF6FF;
+  }
+  
+  .verifier-btn {
+    background-color: #EFF6FF;
+    color:#106a32;
+  }
+  
+  .verifier-btn:hover {
+    background-color: #DBEAFE;
+  }
+  
+  .admin-btn:disabled, .verifier-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .form-footer {
+    margin-top: 24px;
+    text-align: center;
+    color: #666;
+  }
+  
+  .form-footer span {
+    color: #106a32;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .form-footer span:hover {
+    text-decoration: underline;
+  }
+  
