@@ -37,7 +37,7 @@ router.post('/', async (req: Request, res: Response): Promise<void> => {
 // Get all applications with pagination, sorting and filtering
 router.get('/', authenticate, async (req: Request, res: Response): Promise<void> => {
   try {
-    const { status, page = 1, limit = 7, sort = 'createdAt', order = 'desc' } = req.query;
+    const { status, page = 1, limit = 10, sort = 'createdAt', order = 'desc' } = req.query;
     
     let query: any = {};
     if (status) {
