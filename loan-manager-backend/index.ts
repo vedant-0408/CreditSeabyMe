@@ -38,12 +38,10 @@ if (!mongoURI) {
   process.exit(1); // Exit the process if the variable is missing.
 }
 
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('Connected to MongoDB Atlas'))
-.catch((err) => console.error('Could not connect to MongoDB Atlas', err));
+mongoose.connect(mongoURI)
+  .then(() => console.log('Connected to MongoDB Atlas'))
+  .catch((err) => console.error('Could not connect to MongoDB Atlas', err));
+
 
 // Routes
 app.use('/api/auth', authRoutes);

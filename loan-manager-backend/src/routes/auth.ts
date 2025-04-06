@@ -261,26 +261,26 @@ router.get('/users', authenticate, authorizeAdmin, async (req: Request, res: Res
   }
 });
 
-router.delete('/users/:id', authenticate, authorizeAdmin, async (req: Request, res: Response): Promise<void> => {
-  try {
-    const user = await User.findById(req.params.id);
+// router.delete('/users/:id', authenticate, authorizeAdmin, async (req: Request, res: Response): Promise<void> => {
+//   try {
+//     const user = await User.findById(req.params.id);
 
-    if (!user) {
-      res.status(404).json({ message: 'User not found' });
-      return;
-    }
+//     if (!user) {
+//       res.status(404).json({ message: 'User not found' });
+//       return;
+//     }
 
-    // Prevent deleting self
-    if (user._id.toString() === (req.user as any).userId) {
-      res.status(400).json({ message: 'Cannot delete your own account' });
-      return;
-    }
+//     // Prevent deleting self
+//     if (user._id.toString() === (req.user as any).userId) {
+//       res.status(400).json({ message: 'Cannot delete your own account' });
+//       return;
+//     }
 
-    await User.findByIdAndDelete(req.params.id);
-    res.json({ message: 'User deleted successfully' });
-  } catch (error: any) {
-    res.status(500).json({ message: error.message });
-  }
-});
+//     await User.findByIdAndDelete(req.params.id);
+//     res.json({ message: 'User deleted successfully' });
+//   } catch (error: any) {
+//     res.status(500).json({ message: error.message });
+//   }
+// });
 
 export default router;
