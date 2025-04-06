@@ -86,11 +86,11 @@ const UserDashboardLoans = () => {
         return;
       }
       
-      const response = await axios.post("https://mern-backend-vs.onrender.com/api/applications", newLoan, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
+      // const response = await axios.post("https://mern-backend-vs.onrender.com/api/applications", newLoan, {
+      //   headers: {
+      //     Authorization: `Bearer ${token}`
+      //   }
+      // });
       
       setFormSuccess("Loan application submitted successfully!");
       

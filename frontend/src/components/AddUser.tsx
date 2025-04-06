@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-const BASE_URL = import.meta.env.VITE_API_URL;
+// const BASE_URL = import.meta.env.VITE_API_URL;
 
 const AddUser = () => {
   const [username, setUsername] = useState('');

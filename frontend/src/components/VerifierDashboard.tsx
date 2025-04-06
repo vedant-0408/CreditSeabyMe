@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/AdminDashboard.css";
 import axios from "axios";
-const BASE_URL = import.meta.env.VITE_API_URL;
+// const BASE_URL = import.meta.env.VITE_API_URL;
 
 // Import icons
 import { Users, User, DollarSign, PiggyBank, CheckSquare, Briefcase, Bell, MessageSquare, ChevronDown, MoreVertical, ArrowLeft, ArrowRight, Filter, SortAsc, User2 } from "lucide-react";
@@ -45,21 +45,21 @@ interface DashboardData {
   recentApplications: Application[];
 }
 
-interface PaginatedResponse {
-  applications: Application[];
-  pagination: {
-    total: number;
-    page: number;
-    limit: number;
-    pages: number;
-  };
-}
+// interface PaginatedResponse {
+//   applications: Application[];
+//   pagination: {
+//     total: number;
+//     page: number;
+//     limit: number;
+//     pages: number;
+//   };
+// }
 
-interface StatItem {
-  label: string;
-  value: string;
-  icon: React.ReactNode;
-}
+// interface StatItem {
+//   label: string;
+//   value: string;
+//   icon: React.ReactNode;
+// }
 
 const VerifierDashboard: React.FC = () => {
   const [dashboardStats, setDashboardStats] = useState({
@@ -74,9 +74,9 @@ const VerifierDashboard: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [rowsPerPage, setRowsPerPage] = useState<number>(7);
+  const [rowsPerPage] = useState<number>(7);
   const [totalRows, setTotalRows] = useState<number>(0);
-  const [sortField, setSortField] = useState<string>("createdAt");
+  const [sortField] = useState<string>("createdAt");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
   const [filterStatus, setFilterStatus] = useState<string>("");
   const [showFilterDropdown, setShowFilterDropdown] = useState<boolean>(false);
@@ -170,27 +170,27 @@ const VerifierDashboard: React.FC = () => {
   }, [currentPage, rowsPerPage, sortField, sortOrder, filterStatus]);
 
   // Verify application
-  const handleVerifyApplication = async (applicationId: string): Promise<void> => {
-    try {
-      setActionLoading(true);
-      const token = localStorage.getItem("token");
+  // const handleVerifyApplication = async (applicationId: string): Promise<void> => {
+  //   try {
+  //     setActionLoading(true);
+  //     const token = localStorage.getItem("token");
       
-      await axios.patch(`https://mern-backend-vs.onrender.com/api/applications/${applicationId}/verify`, {}, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
+  //     await axios.patch(`https://mern-backend-vs.onrender.com/api/applications/${applicationId}/verify`, {}, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`
+  //       }
+  //     });
       
-      // Refresh applications after verification
-      fetchApplications();
-      setActiveOptionsId(null);
-    } catch (err: any) {
-      console.error("Error verifying application:", err);
-      setError(err.response?.data?.message || "Error verifying application");
-    } finally {
-      setActionLoading(false);
-    }
-  };
+  //     // Refresh applications after verification
+  //     fetchApplications();
+  //     setActiveOptionsId(null);
+  //   } catch (err: any) {
+  //     console.error("Error verifying application:", err);
+  //     setError(err.response?.data?.message || "Error verifying application");
+  //   } finally {
+  //     setActionLoading(false);
+  //   }
+  // };
 
   // Open rejection modal
   const openRejectionModal = (applicationId: string): void => {

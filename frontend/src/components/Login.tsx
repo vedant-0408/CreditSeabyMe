@@ -87,12 +87,12 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('https://mern-backend-vs.onrender.com/api/auth/register', {
-        username,
-        email,
-        password,
-        role: 'user' // Changed from 'verifier' to 'user' for regular user registration
-      });
+      // const response = await axios.post('https://mern-backend-vs.onrender.com/api/auth/register', {
+      //   username,
+      //   email,
+      //   password,
+      //   role: 'user' // Changed from 'verifier' to 'user' for regular user registration
+      // });
 
       setSuccess('Registration successful! You can now login.');
       setIsLogin(true); // Switch back to login form

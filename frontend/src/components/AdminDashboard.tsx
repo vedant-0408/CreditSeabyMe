@@ -50,21 +50,21 @@ interface DashboardData {
   recentApplications: Application[];
 }
 
-interface PaginatedResponse {
-  applications: Application[];
-  pagination: {
-    total: number;
-    page: number;
-    limit: number;
-    pages: number;
-  };
-}
+// interface PaginatedResponse {
+//   applications: Application[];
+//   pagination: {
+//     total: number;
+//     page: number;
+//     limit: number;
+//     pages: number;
+//   };
+// }
 
-interface StatItem {
-  label: string;
-  value: string;
-  icon: React.ReactNode;
-}
+// interface StatItem {
+//   label: string;
+//   value: string;
+//   icon: React.ReactNode;
+// }
 
 const AdminDashboard: React.FC = () => {
   const [dashboardStats, setDashboardStats] = useState({
@@ -80,9 +80,9 @@ const AdminDashboard: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [rowsPerPage, setRowsPerPage] = useState<number>(7);
+  const [rowsPerPage] = useState<number>(7);
   const [totalRows, setTotalRows] = useState<number>(0);
-  const [sortField, setSortField] = useState<string>("createdAt");
+  const [sortField] = useState<string>("createdAt");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
   const [filterStatus, setFilterStatus] = useState<string>("");
   const [showFilterDropdown, setShowFilterDropdown] = useState<boolean>(false);
@@ -568,7 +568,7 @@ const AdminDashboard: React.FC = () => {
                                 <div
                                   className="option-item"
                                   onClick={() => updateApplicationStatus(application._id, 'VERIFIED')}
-                                  style={{ padding: '8px 16px', cursor: 'pointer', hoverBackgroundColor: '#f5f5f5' }}
+                                  style={{ padding: '8px 16px', cursor: 'pointer' }}
                                 >
                                   Verify Application
                                 </div>
@@ -578,7 +578,7 @@ const AdminDashboard: React.FC = () => {
                                 <div
                                   className="option-item"
                                   onClick={() => updateApplicationStatus(application._id, 'APPROVED')}
-                                  style={{ padding: '8px 16px', cursor: 'pointer', hoverBackgroundColor: '#f5f5f5' }}
+                                  style={{ padding: '8px 16px', cursor: 'pointer' }}
                                 >
                                   Approve Application
                                 </div>
@@ -588,7 +588,7 @@ const AdminDashboard: React.FC = () => {
                                 <div
                                   className="option-item"
                                   onClick={() => updateApplicationStatus(application._id, 'REJECTED')}
-                                  style={{ padding: '8px 16px', cursor: 'pointer', hoverBackgroundColor: '#f5f5f5' }}
+                                  style={{ padding: '8px 16px', cursor: 'pointer' }}
                                 >
                                   Reject Application
                                 </div>
