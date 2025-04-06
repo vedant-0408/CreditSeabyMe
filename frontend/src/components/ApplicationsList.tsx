@@ -14,8 +14,8 @@ const ApplicationsList = () => {
       try {
         const token = localStorage.getItem('token');
         const url = filter === 'all' 
-          ? 'http://localhost:5000/api/applications'
-          : `http://localhost:5000/api/applications?status=${filter}`;
+          ? 'https://mern-backend-vs.onrender.com/api/applications'
+          : `https://mern-backend-vs.onrender.com/api/applications?status=${filter}`;
           
         const response = await axios.get(url, {
           headers: { Authorization: `Bearer ${token}` }

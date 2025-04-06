@@ -35,7 +35,7 @@ const ApplicationForm = () => {
         loanAmount: parseFloat(formData.loanAmount)
       };
 
-      await axios.post('http://localhost:5000/api/applications', payload);
+      await axios.post('https://mern-backend-vs.onrender.com/api/applications', payload);
       setSuccess(true);
       
       // Reset form

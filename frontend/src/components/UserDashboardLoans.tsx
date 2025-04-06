@@ -86,7 +86,7 @@ const UserDashboardLoans = () => {
         return;
       }
       
-      const response = await axios.post("http://localhost:5000/api/applications", newLoan, {
+      const response = await axios.post("https://mern-backend-vs.onrender.com/api/applications", newLoan, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -125,7 +125,7 @@ const UserDashboardLoans = () => {
         return;
       }
       
-      const response = await axios.get(`http://localhost:5000/api/applications/user/${email}`, {
+      const response = await axios.get(`https://mern-backend-vs.onrender.com/api/applications/user/${email}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

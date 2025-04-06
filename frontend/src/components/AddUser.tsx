@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 const AddUser = () => {
   const [username, setUsername] = useState('');
@@ -20,7 +21,7 @@ const AddUser = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:5000/api/auth/register',
+        'https://mern-backend-vs.onrender.com/api/auth/register',
         { username, email, password, role },
         { headers: { Authorization: `Bearer ${token}` } }
       );

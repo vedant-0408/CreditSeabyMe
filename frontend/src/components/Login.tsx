@@ -36,8 +36,8 @@ const Login = () => {
 
     try {
       const endpoint = role 
-        ? `http://localhost:5000/api/auth/login/${role}` 
-        : 'http://localhost:5000/api/auth/login';
+        ? `https://mern-backend-vs.onrender.com/api/auth/login/${role}` 
+        : 'https://mern-backend-vs.onrender.com/api/auth/login';
       
       const response = await axios.post(endpoint, {
         email,
@@ -87,7 +87,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await axios.post('https://mern-backend-vs.onrender.com/api/auth/register', {
         username,
         email,
         password,

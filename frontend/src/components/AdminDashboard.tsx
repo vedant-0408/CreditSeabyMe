@@ -106,7 +106,7 @@ const AdminDashboard: React.FC = () => {
       setLoadingVerifiers(true);
       const token = localStorage.getItem("token");
 
-      const response = await axios.get("http://localhost:5000/api/auth/users?role=verifier", {
+      const response = await axios.get("https://mern-backend-vs.onrender.com/api/auth/users?role=verifier", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -138,7 +138,7 @@ const AdminDashboard: React.FC = () => {
       setLoadingVerifiers(true);
       const token = localStorage.getItem("token");
 
-      await axios.post("http://localhost:5000/api/auth/create-user", {
+      await axios.post("https://mern-backend-vs.onrender.com/api/auth/create-user", {
         ...newVerifier,
         role: "verifier"
       }, {
@@ -168,7 +168,7 @@ const AdminDashboard: React.FC = () => {
       setLoadingVerifiers(true);
       const token = localStorage.getItem("token");
 
-      await axios.delete(`http://localhost:5000/api/auth/users/${verifierId}`, {
+      await axios.delete(`https://mern-backend-vs.onrender.com/api/auth/users/${verifierId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -192,7 +192,7 @@ const AdminDashboard: React.FC = () => {
         console.log("hi");
         setLoading(true);
         const token = localStorage.getItem("token"); // Assuming token is stored in localStorage
-        const response = await axios.get<DashboardData>("http://localhost:5000/api/applications/stats/dashboard", {
+        const response = await axios.get<DashboardData>("https://mern-backend-vs.onrender.com/api/applications/stats/dashboard", {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -233,7 +233,7 @@ const AdminDashboard: React.FC = () => {
       setLoading(true);
       const token = localStorage.getItem("token");
 
-      let url = `http://localhost:5000/api/applications?page=${currentPage}&limit=${rowsPerPage}&sort=${sortField}&order=${sortOrder}`;
+      let url = `https://mern-backend-vs.onrender.com/api/applications?page=${currentPage}&limit=${rowsPerPage}&sort=${sortField}&order=${sortOrder}`;
       if (filterStatus) {
         url += `&status=${filterStatus}`;
       }
@@ -289,7 +289,7 @@ const AdminDashboard: React.FC = () => {
       setError("Application ID is missing");
       return;
     }
-    
+
       const token = localStorage.getItem("token");
       let endpoint = '';
       let data = {};
@@ -297,13 +297,13 @@ const AdminDashboard: React.FC = () => {
       // Determine the appropriate endpoint based on the new status
       switch (newStatus) {
         case 'VERIFIED':
-          endpoint = `http://localhost:5000/api/applications/${applicationId}/verify`;
+          endpoint = `https://mern-backend-vs.onrender.com/api/applications/${applicationId}/verify`;
           break;
         case 'APPROVED':
-          endpoint = `http://localhost:5000/api/applications/${applicationId}/approve`;
+          endpoint = `https://mern-backend-vs.onrender.com/api/applications/${applicationId}/approve`;
           break;
         case 'REJECTED':
-          endpoint = `http://localhost:5000/api/applications/${applicationId}/reject`;
+          endpoint = `https://mern-backend-vs.onrender.com/api/applications/${applicationId}/reject`;
           data = { rejectionReason: "Application rejected by admin" };
           break;
         default:

@@ -23,7 +23,7 @@ const ApplicationDetail = () => {
       try {
         const token = localStorage.getItem('token');
         const response = await axios.get(
-          `http://localhost:5000/api/applications/${id}`,
+          `https://mern-backend-vs.onrender.com/api/applications/${id}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setApplication(response.data);
@@ -41,7 +41,7 @@ const ApplicationDetail = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.patch(
-        `http://localhost:5000/api/applications/${id}/verify`,
+        `https://mern-backend-vs.onrender.com/api/applications/${id}/verify`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -60,7 +60,7 @@ const ApplicationDetail = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.patch(
-        `http://localhost:5000/api/applications/${id}/reject`,
+        `https://mern-backend-vs.onrender.com/api/applications/${id}/reject`,
         { rejectionReason },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -74,7 +74,7 @@ const ApplicationDetail = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.patch(
-        `http://localhost:5000/api/applications/${id}/approve`,
+        `https://mern-backend-vs.onrender.com/api/applications/${id}/approve`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

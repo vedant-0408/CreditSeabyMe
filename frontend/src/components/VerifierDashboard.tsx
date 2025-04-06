@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/AdminDashboard.css";
 import axios from "axios";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 // Import icons
 import { Users, User, DollarSign, PiggyBank, CheckSquare, Briefcase, Bell, MessageSquare, ChevronDown, MoreVertical, ArrowLeft, ArrowRight, Filter, SortAsc, User2 } from "lucide-react";
@@ -91,7 +92,7 @@ const VerifierDashboard: React.FC = () => {
       try {
         setLoading(true);
         const token = localStorage.getItem("token");
-        const response = await axios.get<DashboardData>("http://localhost:5000/api/applications/stats/dashboard", {
+        const response = await axios.get<DashboardData>("https://mern-backend-vs.onrender.com/api/applications/stats/dashboard", {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -130,7 +131,7 @@ const VerifierDashboard: React.FC = () => {
       setLoading(true);
       const token = localStorage.getItem("token");
       
-      let url = `http://localhost:5000/api/applications?page=${currentPage}&limit=${rowsPerPage}&sort=${sortField}&order=${sortOrder}`;
+      let url = `https://mern-backend-vs.onrender.com/api/applications?page=${currentPage}&limit=${rowsPerPage}&sort=${sortField}&order=${sortOrder}`;
       if (filterStatus) {
         url += `&status=${filterStatus}`;
       }
@@ -174,7 +175,7 @@ const VerifierDashboard: React.FC = () => {
       setActionLoading(true);
       const token = localStorage.getItem("token");
       
-      await axios.patch(`http://localhost:5000/api/applications/${applicationId}/verify`, {}, {
+      await axios.patch(`https://mern-backend-vs.onrender.com/api/applications/${applicationId}/verify`, {}, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -209,7 +210,7 @@ const VerifierDashboard: React.FC = () => {
       setActionLoading(true);
       const token = localStorage.getItem("token");
       
-      await axios.patch(`http://localhost:5000/api/applications/${applicationToReject}/reject`, {
+      await axios.patch(`https://mern-backend-vs.onrender.com/api/applications/${applicationToReject}/reject`, {
         rejectionReason
       }, {
         headers: {
